@@ -3,7 +3,9 @@ package com.matrix.pruebabackend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -13,12 +15,10 @@ import java.time.LocalDateTime;
 @Table(name = "PRICES")
 public class Price {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @Column(name = "BRAND_ID")
-    private Long brandId;
+    @ManyToOne()
+    @JoinColumn(name = "BRAND_ID")
+    private Brand brandId;
 
     @Column(name = "START_DATE")
     private LocalDateTime startDate;
@@ -26,11 +26,13 @@ public class Price {
     @Column(name = "END_DATE")
     private LocalDateTime endDate;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRICE_LIST")
     private Integer priceList;
 
     @Column(name = "PRODUCT_ID")
-    private Long productId;
+    private Integer productId;
 
     @Column(name = "PRIORITY")
     private Integer priority;
