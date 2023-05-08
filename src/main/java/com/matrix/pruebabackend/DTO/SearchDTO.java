@@ -14,8 +14,8 @@ public class SearchDTO {
 
     private String name;
 
-    private Integer productId;
-
     private LocalDateTime date;
+
+    private String productName;
 
 }

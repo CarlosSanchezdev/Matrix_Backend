@@ -31,7 +31,7 @@ public class Price {
     @Column(name = "PRICE_LIST")
     private Integer priceList;
 
-    @Column(name = "PRODUCT_ID")
+    @JoinColumn(name = "PRODUCT_ID")
     private Integer productId;
 
     @Column(name = "PRIORITY")

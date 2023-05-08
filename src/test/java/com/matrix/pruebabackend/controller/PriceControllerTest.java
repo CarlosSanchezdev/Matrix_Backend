@@ -41,7 +41,7 @@ public class PriceControllerTest {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setName("ZARA");
         searchDTO.setDate(LocalDateTime.of(2020, Month.JUNE, 14, 10, 0));
-        searchDTO.setProductId(35455);
+        searchDTO.setProductName("Bolso");
 
         mockMvc.perform(get("/price")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -59,7 +59,7 @@ public class PriceControllerTest {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setName("ZARA");
         searchDTO.setDate(LocalDateTime.of(2020, Month.JUNE, 14, 16, 0));
-        searchDTO.setProductId(35455);
+        searchDTO.setProductName("Bolso");
 
         mockMvc.perform(get("/price")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -77,7 +77,7 @@ public class PriceControllerTest {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setName("ZARA");
         searchDTO.setDate(LocalDateTime.of(2020, Month.JUNE, 14, 21, 0));
-        searchDTO.setProductId(35455);
+        searchDTO.setProductName("Bolso");
 
         mockMvc.perform(get("/price")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -95,7 +95,7 @@ public class PriceControllerTest {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setName("ZARA");
         searchDTO.setDate(LocalDateTime.of(2020, Month.JUNE, 15, 10, 0));
-        searchDTO.setProductId(35455);
+        searchDTO.setProductName("Bolso");
 
         mockMvc.perform(get("/price")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -113,7 +113,7 @@ public class PriceControllerTest {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setName("ZARA");
         searchDTO.setDate(LocalDateTime.of(2020, Month.JUNE, 16, 21, 0));
-        searchDTO.setProductId(35455);
+        searchDTO.setProductName("Bolso");
 
         mockMvc.perform(get("/price")
                         .contentType(MediaType.APPLICATION_JSON)

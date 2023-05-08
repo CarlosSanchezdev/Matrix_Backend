@@ -3,8 +3,10 @@ package com.matrix.pruebabackend.service;
 import com.matrix.pruebabackend.DTO.ResponseDTO;
 import com.matrix.pruebabackend.model.Brand;
 import com.matrix.pruebabackend.model.Price;
+import com.matrix.pruebabackend.model.Product;
 import com.matrix.pruebabackend.repository.BrandRepository;
 import com.matrix.pruebabackend.repository.PriceRepository;
+import com.matrix.pruebabackend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +23,19 @@ public class SearchService {
     BrandRepository brandRepository;
 
     @Autowired
+    ProductRepository productRepository;
+
+    @Autowired
     private PriceRepository priceRepository;
 
 
     public Optional<Brand> validateBrand(String brandName) {
         Optional<Brand> brandId = brandRepository.findByName(brandName);
         return brandId;
+    }
+    public Optional<Product> validateProduct(String productName) {
+        Optional<Product> productId = productRepository.findByName(productName);
+        return productId;
     }
 
     public ResponseDTO searchPrice(LocalDateTime date, Integer productId, Integer brandId) {
