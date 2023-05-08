@@ -16,9 +16,9 @@ import java.util.List;
 public class Price {
 
 
-    @ManyToOne()
+
     @JoinColumn(name = "BRAND_ID")
-    private Brand brandId;
+    private Integer brandId;
 
     @Column(name = "START_DATE")
     private LocalDateTime startDate;

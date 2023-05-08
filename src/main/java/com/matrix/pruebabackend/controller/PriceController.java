@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/price")
 public class PriceController {
     @Autowired
-    SearchService searchService;
+    public SearchService searchService;
 
     @GetMapping("")
     public Optional<Object> readStory(@RequestBody @NotNull @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) SearchDTO searchDTO) {

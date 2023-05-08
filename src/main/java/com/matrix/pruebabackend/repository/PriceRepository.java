@@ -12,13 +12,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface PriceRepository extends JpaRepository<Price, Long> {
+public interface PriceRepository extends JpaRepository<Price, Integer> {
 
-    @Query("SELECT p FROM Prices p WHERE :date BETWEEN p.START_DATE AND p.END_DATE AND p.product.id = :productId AND p.brand.id = :brandId")
-    static List<Price> findByBrandIdAndProductIdAndDate(
-            @Param("date") LocalDateTime date, @Param("productId") Integer productId, @Param("brandId") Integer brandId) {
-        return null;
-    }
-
+    List<Price>findByBrandIdAndProductIdAndStartDateBeforeAndEndDateAfter(
+            Integer brandId,
+            Integer productId,
+            LocalDateTime startDate,
+            LocalDateTime endDate);
 
 }
